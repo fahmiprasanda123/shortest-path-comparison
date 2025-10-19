@@ -99,11 +99,15 @@ graph_dense_pos_array = graph_dense_pos.toarray()
 time_fw = run_floyd_warshall(graph_dense_pos_array)
 time_jh = run_johnson(graph_dense_pos)
 time_dk = run_dijkstra_all_pairs(graph_dense_pos)
+time_bf = run_bellman_ford_all_pairs(graph_dense_pos)
 
+# APSP: All-Pairs Shortest Path
+# V x SSSP: V kali Single-Source Shortest Path
 
 print(f"  Floyd-Warshall (APSP): {time_fw:.4f} detik")
 print(f"  Johnson (APSP):        {time_jh:.4f} detik")
 print(f"  Dijkstra (V x SSSP):   {time_dk:.4f} detik")
+print(f"  Bellman-Ford (V x SSSP):   {time_bf:.4f} detik")
 # skip bellman-ford for karena tidak adil karena menggunakan density positif
 
 print("-" * 50)
@@ -121,10 +125,13 @@ graph_sparse_pos_array = graph_sparse_pos.toarray()
 time_fw = run_floyd_warshall(graph_sparse_pos_array)
 time_jh = run_johnson(graph_sparse_pos)
 time_dk = run_dijkstra_all_pairs(graph_sparse_pos)
+time_bf = run_bellman_ford_all_pairs(graph_sparse_pos)
 
 print(f"  Floyd-Warshall (APSP): {time_fw:.4f} detik")
 print(f"  Johnson (APSP):        {time_jh:.4f} detik")
 print(f"  Dijkstra (V x SSSP):   {time_dk:.4f} detik")
+print(f"  Bellman-Ford (V x SSSP):   {time_bf:.4f} detik")
+
 # skip bellman-ford for karena tidak adil karena menggunakan density positif
 print("-" * 50)
 
